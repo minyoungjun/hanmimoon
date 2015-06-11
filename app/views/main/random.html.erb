@@ -5,7 +5,7 @@
     <h3>설명보기전에 분류를 고르시오</h3>
 
     <%@array1.each do |category|%>
-      <p <%if category == @category%> class="right_category category"<%else%>class="category"><%=category%></p>
+      <p <%if category == @category%> class="right_category category"<%else%>class="category"<%end%>><%=category%></p>
     <%end%>
     <div class="answer_div" style="display:none;">
       <h3>설명을 고르시오</h3>
