@@ -19,6 +19,10 @@ class MainController < ApplicationController
 
     category = @double.shuffle[0]
 
+    @category = category[0]
+
+    @array1 = array1
+
     @picture = category[1].sample
 
     @ai = category[1]
