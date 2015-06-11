@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'main#upload'
   get 'main/upload'
+  get 'main/delete/:id' => "main#delete"
   post 'main/upload_process'
+  get 'main/random'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -3,6 +3,7 @@ class Picture < ActiveRecord::Base
     validates_attachment_content_type :file, :content_type => /\Aimage\/.*\Z/
 
     has_one :content
+    has_many  :problems
 
 end
 

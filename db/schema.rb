@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611134552) do
+ActiveRecord::Schema.define(version: 20150611144634) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "problem_id"
+    t.integer  "content_id"
+    t.boolean  "selected"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contents", force: true do |t|
     t.integer  "picture_id"
@@ -56,6 +64,10 @@ ActiveRecord::Schema.define(version: 20150611134552) do
   end
 
   create_table "problems", force: true do |t|
+    t.integer  "quiz_id"
+    t.integer  "picture_id"
+    t.boolean  "right"
+    t.integer  "content_id", default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end

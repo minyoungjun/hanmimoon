@@ -1,8 +1,32 @@
 class MainController < ApplicationController
+
+
+  def makequiz
+
+  end
+
+  def random
+
+    @picture = Picture.all.sample
+  
+    @ai = Picture.all
+    
+    @array = @ai.shuffle[0..4]
+
+     @array << @picture
+
+  end
+
 	def index
 
   end
   def upload
+
+  end
+  def delete
+
+    Picture.find(params[:id]).delete
+    redirect_to :action => "upload"
 
   end
   def upload_process

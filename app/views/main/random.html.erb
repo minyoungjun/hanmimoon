@@ -1,0 +1,26 @@
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<div class="jumbotron">
+    <p><img src="<%=@picture.file.url(:medium)%>"/></p>
+
+    <%@array.shuffle.each do |answer|%>
+      <p <%if answer.id == @picture.id%>class="right_answer answer"<%else%>class="wrong_answer answer"<%end%>><%=answer.content.text%></p>
+    <%end%>
+    <p><a href="/main/random" class="btn btn-lg btn-primary">다음 문제</a></p>
+	</div>
+	<div class="page-header">
+		<h1>Sticky footer</h1>
+	</div>
+	<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
+	<p>Use <a href="../sticky-footer-navbar">the sticky footer with a fixed navbar</a> if need be, too.</p>
+</div>
+<div class="col-md-1"></div>
+
+<script>
+  $(".answer").click(function(){
+
+    $(this).css("color", "red");
+    $(".right_answer").css("color", "blue");
+  
+  });
+</script>
