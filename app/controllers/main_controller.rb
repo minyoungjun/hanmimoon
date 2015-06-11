@@ -14,7 +14,7 @@ class MainController < ApplicationController
     array2 = [1, 3, 11, 15, 20, 24, 25, 34, 45, 55, 78, 89, 103]
 
     0.upto(array1.length - 1) do |x|
-      @double << [array1[x], Picture.where(:id => "#{array2[x]}..#{array2[x+1]}")]
+      @double << [array1[x], Picture.where("id <= ? AND id > ?", array2[x + 1], array2[x])]
     end
 
     category = @double.shuffle[0]
