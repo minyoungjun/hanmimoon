@@ -1,0 +1,25 @@
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<div class="jumbotron">
+
+    <form action="/main/upload_process" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <p>이미지를 첨부하고 설명을 쓴 후  업로드 버튼을 누르세요이새끼야</p>
+        <p><input type="file" name="picture"></p>
+        <p><textarea name="content" class="form-control" placeholder="설명을 여따가 자세히 쓰그라"></textarea></p>
+        <input type="submit" class="btn btn-lg btn-primary" value="업로드!">
+      </div>
+    </form>
+
+
+
+	</div>
+	<div class="page-header">
+		<h1>문제 목록</h1>
+	</div>
+</p>
+<%Picture.all.each do |picture|%>
+  <p class="lead"><img src="<%=picture.file.url(:small)%>"><%=picture.content.text%></p>
+<%end%>
+</div>
+<div class="col-md-1"></div>
