@@ -26,9 +26,10 @@ class MainController < ApplicationController
     @picture = category[1].sample
 
     @ai = category[1]
-    @array = @ai.shuffle[0..3]
 
-    @array = Picture.all.shuffle[0..2]
+    @array = @ai.shuffle[0..4]
+
+    @array = Picture.all.shuffle[0..3]
     @array << @picture
 
     @array.uniq!
