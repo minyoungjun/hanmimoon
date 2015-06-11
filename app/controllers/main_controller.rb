@@ -11,10 +11,10 @@ class MainController < ApplicationController
     @double = Array.new
 
     array1 = ["선사시대", "고구려", "백제", "그냥 신라", "통일 신라", "발해", "고려", "조선초기 회화", "조선 중기의 회화", "조선 후기의 회화", "조선 말기의 회화", "조선시대의 도자, 공예, 건축"]
-    array2 = [0, 3, 11, 15, 20, 24, 25, 34, 45, 55, 78, 89, 103]
+    array2 = [1, 3, 11, 15, 20, 24, 25, 34, 45, 55, 78, 89, 103]
 
     0.upto(array1.length - 1) do |x|
-      @double << [array1[x], Picture.where(:id => array2[x]..array2[x+1])]
+      @double << [array1[x], Picture.where(:id => "#{array2[x]}..#{array2[x+1]}")]
     end
 
     category = @double.shuffle[0]
