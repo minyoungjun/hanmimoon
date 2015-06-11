@@ -15,7 +15,7 @@
       <%end%>
     </div>
 
-      <p><a href="/main/random" class="btn btn-lg btn-primary">다음 문제</a></p>
+      <p><a id="next_btn" style= "display:none;"href="/main/random" class="btn btn-lg btn-primary">다음 문제</a></p>
 
 	</div>
 	<div class="page-header">
@@ -37,5 +37,6 @@
     $(this).css("color", "red");
     $(".right_category").css("color", "blue");
     $(".answer_div").show();
+    $("#next_btn").show();
   });
 </script>
