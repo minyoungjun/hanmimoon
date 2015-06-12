@@ -2,6 +2,9 @@
   p {
     cursor:pointer;
   }
+  a {
+    cursor:pointer;
+  }
 </style>
 <div class="col-md-1"></div>
 <div class="col-md-10">
@@ -10,7 +13,7 @@
     <h3>설명보기전에 분류를 고르시오</h3>
 
     <%@array1.each do |category|%>
-      <a href="#"<%if category == @category%> class="right_category category"<%else%>class="category"<%end%> style="margin-right:10px;"><%=category%></a>
+      <a <%if category == @category%> class="right_category category"<%else%>class="category"<%end%> style="margin-right:10px;"><%=category%></a>
     <%end%>
     <div class="answer_div" style="display:none;">
       <h3>설명을 고르시오</h3>
