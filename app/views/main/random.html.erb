@@ -10,13 +10,12 @@
     <h3>설명보기전에 분류를 고르시오</h3>
 
     <%@array1.each do |category|%>
-      <p <%if category == @category%> class="right_category category"<%else%>class="category"<%end%>><%=category%></p>
+      <a href="#"<%if category == @category%> class="right_category category"<%else%>class="category"<%end%> style="margin-right:10px;"><%=category%></a>
     <%end%>
     <div class="answer_div" style="display:none;">
       <h3>설명을 고르시오</h3>
-
       <%@array.shuffle.each do |answer|%>
-        <p <%if answer.id == @picture.id%>class="right_answer answer"<%else%>class="wrong_answer answer"<%end%>><%=answer.content.text%></p>
+        <p <%if answer.id == @picture.id%>class="right_answer answer"<%else%>class="wrong_answer answer"<%end%>><%if answer.id != @picture.id%><img src = "<%=answer.file.url(:small)%>" style="display:none;"class="another_picture"/><%end%><%=answer.content.text%></p>
       <%end%>
     </div>
 
@@ -43,5 +42,6 @@
     $(this).css("color", "red");
     $(".right_category").css("color", "blue");
     $(".answer_div").show();
+    $(".another_picture").show();
   });
 </script>
